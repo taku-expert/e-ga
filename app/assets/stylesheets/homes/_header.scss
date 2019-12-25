@@ -1,13 +1,13 @@
 .header {
   height: 130px;
-  background-color: #80644F;
+  background-color: #CCA07E;
 
   // headerの上側部分 //
   &__top {
     display: flex;
     justify-content: space-between;
     height: 80px;
-    background-color: #CCA07E;
+    background-color: #80644F;
     padding: 15px;
     &__left-box {
       display: flex;
