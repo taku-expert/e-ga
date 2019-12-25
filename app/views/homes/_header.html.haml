@@ -10,10 +10,15 @@
   .header__bottom
     .header__bottom__left-box
       %ul
-        %li ホーム
-        %li ジャンル
-        %li お気に入り
+        %li 
+          = link_to 'ホーム', '/'
+        %li
+          = link_to 'ジャンル', '/'
+        %li
+          = link_to 'お気に入り', '/'
     .header__bottom__right-box
       %ul
-        %li 設定
-        %li ヘルプ
+        %li
+          = link_to '設定', '/'
+        %li
+          = link_to 'ヘルプ', '/'
