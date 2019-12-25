@@ -1,12 +1,14 @@
 .footer {
   height: 150px;
-  background-color: #CCA07E;
+  background-color: $ega-rightblue;
+  border-top: 3px solid $ega-skyblue;
   &__top {
     height: 50px;
     text-align: center;
+    color: white;
   }
   &__logo {
     height: 200px;
-    background-color: #80644F;
+    background-color: $ega-blue;
   }
 }
