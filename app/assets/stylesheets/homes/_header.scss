@@ -1,0 +1,76 @@
+.header {
+  height: 130px;
+  background-color: #CCA07E;
+
+  // headerの上側部分 //
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    background-color: #80644F;
+    padding: 15px;
+    &__left-box {
+      display: flex;
+      .pulldown-btn {
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+      }
+      .logo {
+        margin-left: 15px;
+        width: 100px;
+        height: 50px;
+        background-color: #fff;
+      }
+    }
+    &__search-box {
+      width: 900px;
+      height: 50px;
+      background-color: #fff;
+    }
+    &__right-box {
+      display: flex;
+      width: 150px;
+      height: 50px;
+      background-color: #fff;
+      .user-image {
+
+      }
+      .user-nickname {
+
+      }
+    }
+  }
+
+  // headerの下側部分 //
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    &__left-box {
+      ul {
+        display: flex;
+        li {
+          margin-left: 40px;
+          line-height: 50px;
+          a {
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+      }
+    }
+    &__right-box {
+      ul {
+        display: flex;
+        li {
+          margin-right: 40px;
+          line-height: 50px;
+          a {
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
