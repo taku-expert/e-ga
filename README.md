@@ -5,9 +5,14 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|admin|boolean|default: false|
 |email|string|null: false|
 |password|string|null: false|
 |encrypted_password|string|null: false|
+|age|integer|null: false|
+|gendder|string|null: false|
+|favoritegenre_id|integer|null: false|
+
 
 ### Association
 - has_many :comments
@@ -19,10 +24,9 @@
 |------|----|-------|
 |title|string|null: false|
 |screening_time|string|null: false|
-|detail|string|null: false|
+|detail|text|null: false|
 |director|string|null: false|
 |starring|string|null: false|
-|detail|string|null: false|
 |year|integer|null: false|
 |genre_id|integer|null: false|
 
@@ -30,11 +34,11 @@
 - has_many :comments
 - belongs_to :user
 
-### userテーブル
+### commentテーブル
 |Column|Type|Options|
 |------|----|-------|
 |title|string|null: false|
-|text|string|null: false|
+|text|text|null: false|
 |evaluate|string|null: false|
 |movie_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
