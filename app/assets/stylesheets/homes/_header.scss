@@ -29,6 +29,19 @@
       height: 50px;
       background-color: $ega-skyblue;
     }
+    &__search-btn {
+      height: 50px;
+      width: 50px;
+      background-color: $ega-rightbrown;
+      float: right;
+      .fa-search {
+        margin-left: 10px;
+        font-size: 35px;
+        line-height: 50px;
+        cursor: pointer;
+        color: white;
+      }
+    }
     &__right-box {
       display: flex;
       width: 150px;
