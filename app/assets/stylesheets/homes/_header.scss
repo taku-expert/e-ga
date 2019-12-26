@@ -1,8 +1,6 @@
 .header {
-  height: 130px;
   background-color: $ega-rightblue;
   border-bottom: 3px solid $ega-skyblue;
-
   // headerの上側部分 //
   &__top {
     display: flex;
@@ -42,34 +40,37 @@
       }
     }
   }
-
+}
   // headerの下側部分 //
-  &__bottom {
-    display: flex;
-    justify-content: space-between;
-    &__left-box {
-      ul {
-        display: flex;
-        li {
-          margin-left: 40px;
-          line-height: 50px;
-          a {
-            text-decoration: none;
-            color: white;
-          }
+.header__bottom {
+  height: 50px;
+  background-color: $ega-rightblue;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  &__left-box {
+    ul {
+      display: flex;
+      li {
+        margin-left: 40px;
+        line-height: 50px;
+        a {
+          text-decoration: none;
+          color: white;
         }
       }
     }
-    &__right-box {
-      ul {
-        display: flex;
-        li {
-          margin-right: 40px;
-          line-height: 50px;
-          a {
-            text-decoration: none;
-            color: white;
-          }
+  }
+  &__right-box {
+    ul {
+      display: flex;
+      li {
+        margin-right: 40px;
+        line-height: 50px;
+        a {
+          text-decoration: none;
+          color: white;
         }
       }
     }
