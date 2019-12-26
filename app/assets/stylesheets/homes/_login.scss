@@ -1,0 +1,17 @@
+.single{
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    background-color: $ega-blue;
+    align-items: center;
+    height: 120px;
+    
+    &-logo {
+      height: 50px;
+      width: 185px;
+      margin-right: 10px;
+      background-color: white;
+    }
+  }
+}
