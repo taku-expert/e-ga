@@ -29,6 +29,7 @@
 |starring|string|null: false|
 |year|integer|null: false|
 |genre_id|integer|null: false|
+|rating_status|string|
 
 ### Association
 - has_many :comments
@@ -39,7 +40,7 @@
 |------|----|-------|
 |title|string|null: false|
 |text|text|null: false|
-|evaluate|string|null: false|
+|evaluate|rate|float, null:false|
 |movie_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
