@@ -1,6 +1,5 @@
 # README
 
-
 ### userテーブル
 |Column|Type|Options|
 |------|----|-------|
