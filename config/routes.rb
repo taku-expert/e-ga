@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'homes#index'
   resources :homes, only: [:index]
+  
+  get 'getstarted', to: 'homes#getstarted'
 
 end
