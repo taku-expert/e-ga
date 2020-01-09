@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_07_041054) do
+ActiveRecord::Schema.define(version: 2020_01_09_045711) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_01_07_041054) do
     t.boolean "admin", default: false
     t.integer "age", null: false
     t.string "gendder", null: false
-    t.integer "favoritegenre_id", null: false
+    t.integer "favoritegenre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
