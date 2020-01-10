@@ -40,6 +40,7 @@
   }
   .movie-sub{
     margin:0 auto;
+    padding-bottom:50px;
     max-width: 800px;
     display: flex;
     .movie-review{
@@ -51,8 +52,26 @@
       }
     }
     .movie-comments{
-      width:70%
-      .movie
+      width:70%;
+      &__title{
+        font-size: 20px;
+        margin:30px auto;
+      }
+      .comment-item{
+        margin:10px auto;
+        .comment-user{
+          display: flex;
+          &__name{
+            margin-right:30px;
+          }
+        }
+        .comment-time{
+          color:$ega-skyblue;
+        }
+        .comment-main{
+          bottom:50px;
+        }
+      }
     }
   }
 }
