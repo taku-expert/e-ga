@@ -12,10 +12,11 @@
                 size        : 36,
                 starOff     : '#{asset_path('star-off.png')}',
                 starOn      : '#{asset_path('star-on.png')}',
-                starHalf    : '#{asset_path('star-half.png')}',
                 scoreName   : 'comment[rate]',
-                half        : true,
               });
+            -# JS内に下記記述追加で、".5"評価が可能
+            -# starHalf    : '#{asset_path('star-half.png')}',
+            -# half        : true,
             .form-group.row
               = form.label :title
               = form.text_field :title, id: :comment_title
