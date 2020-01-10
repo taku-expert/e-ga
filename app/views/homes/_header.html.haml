@@ -2,8 +2,11 @@
   .header__top
     .header__top__left-box
       .pulldown-btn
+        %i.far.fa-list-alt
       .logo
     .header__top__search-box
+      .header__top__search-btn
+        %i.fas.fa-search
     .header__top__right-box
       .user-image
       .user-nickname
@@ -20,5 +23,7 @@
       %ul
         %li
           = link_to '設定', '/'
+        %li
+          = link_to '使い方', getstarted_path
         %li
           = link_to 'ヘルプ', '/'
