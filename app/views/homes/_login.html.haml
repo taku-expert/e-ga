@@ -1,0 +1,25 @@
+.single
+  .single__header
+    .single__header-logo
+      = link_to root_path do
+        //= image_tag src="fmarket_logo_red.svg", alt:"merukari" , height: "50px", width: "185px"
+  .single__contents
+    .single__contents__middle
+      .single__contents__middle__header
+        %h2 ログイン
+      .single__contents__middle__form
+        = form_with model: @user, local: true do |f|
+
+          .single__contents__middle__form__block
+            %p メールアドレス
+            %p.box 必須
+            = f.email_field :email, autocomplete: "email",placeholder: "PC・携帯どちらでも可"
+
+          .single__contents__middle__form__block
+            %p パスワード
+            %p.box 必須
+            = f.password_field :password, autocomplete: "password",placeholder: "７文字以上の半角英数字"
+
+          .single__contents__middle__form__submit
+            = f.submit "登録", class: "submit"
+    .single__contents__footerlog

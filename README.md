@@ -1,24 +1,50 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+### userテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|admin|boolean|default: false|
+|email|string|null: false|
+|password|string|null: false|
+|encrypted_password|string|null: false|
+|age|integer|null: false|
+|gendder|string|null: false|
+|favoritegenre_id|integer|null: false|
+|rating_status|string|
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+### Association
+- has_many :comments
+- has_many :movies
 
-* Database creation
 
-* Database initialization
+### moviesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|string|null: false|
+|screening_time|string|null: false|
+|detail|text|null: false|
+|director|string|null: false|
+|starring|string|null: false|
+|year|integer|null: false|
+|genre_id|integer|null: false|
 
-* How to run the test suite
+### Association
+- has_many :comments
+- belongs_to :user
 
-* Services (job queues, cache servers, search engines, etc.)
+### commentテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|string|null: false|
+|text|text|null: false|
+|evaluate|rate|float, null:false|
+|movie_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :movie
+- belongs_to :user
