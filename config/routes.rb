@@ -4,7 +4,13 @@ Rails.application.routes.draw do
 
   root to: 'homes#index'
   resources :homes, only: [:index]
+<<<<<<< Updated upstream
   
   get 'getstarted', to: 'homes#getstarted'
 
+=======
+  resources :movies do
+    resources :comments
+  end
+>>>>>>> Stashed changes
 end
