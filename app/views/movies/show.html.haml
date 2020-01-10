@@ -19,24 +19,36 @@
       まだレビューがありません
     - else
       .progress-bar
-        = @progress.each do |p|
-          = p
-        .progress-bar__5
-          %progress#Progress_5{max: "#{@progress}", value: "#{@progress_5}"} 0%
-          = @progress_5
-        -# .progress-bar__4
-        -#   %progress#Progress_4{max: "#{@max_progress}", value: "#{@progress_4}"} 0%
-        -#   = @progress_4
-        -# .progress-bar__3
-        -#   %progress#Progress_3{max: "#{@max_progress}", value: "#{@progress_3}"} 0%
-        -#   = @progress_3
-        -# .progress-bar__2
-        -#   %progress#Progress_2{max: "#{@max_progress}", value: "#{@progress_2}"} 0%
-        -#   = @progress_2
-        -# .progress-bar__1
-        -#   %progress#Progress_1{max: "#{@max_progress}", value: "#{@progress_1}"} 0%
-        -#   = @progress_1
-        -# .progress-bar__0
+        - @max_progress = []
+        - @progress.each do |p|
+          - @max_progress << p.second
+        .progress-bar__star
+          - @rate.each do |r|
+            %div{class: "progress-bar__star__head", id: "rate-#{r}"}
+              :javascript
+                $('#rate-#{r}').raty({
+                  size: 36,
+                  starOff   : '#{asset_path('star-off.png')}',
+                  starOn    : '#{asset_path('star-on.png')}',
+                  readOnly  : true,
+                  score     : #{r},
+                });
+        .progress-bar__rate
+          .progress-bar__5
+            %progress#Progress_5{max: "#{@max_progress.first}", value: "#{@progress_5}"} 0%
+            = @progress_5
+          .progress-bar__4
+            %progress#Progress_4{max: "#{@max_progress.first}", value: "#{@progress_4}"} 0%
+            = @progress_4
+          .progress-bar__3
+            %progress#Progress_3{max: "#{@max_progress.first}", value: "#{@progress_3}"} 0%
+            = @progress_3
+          .progress-bar__2
+            %progress#Progress_2{max: "#{@max_progress.first}", value: "#{@progress_2}"} 0%
+            = @progress_2
+          .progress-bar__1
+            %progress#Progress_1{max: "#{@max_progress.first}", value: "#{@progress_1}"} 0%
+            = @progress_1
       %h3 このmovieの平均評価
       %h4
         .average-content
