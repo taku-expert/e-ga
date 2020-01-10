@@ -1,0 +1,29 @@
+%body
+  .content
+    .content-top
+      .contents.row
+        .container
+          = form_for @movie do |form|
+            .form-group.row
+              = form.label :title
+              = form.text_field :title
+            .form-group.row
+              = form.label :screening_time
+              = form.text_field :screening_time
+            .form-group.row
+              = form.label :year
+              = form.text_field :year
+            .form-group.row
+              = form.label :detail
+              = form.text_field :detail
+            .form-group.row
+              = form.label :genre_id
+              = form.text_field :genre_id
+            .form-group.row
+              = form.label :director
+              = form.text_field :director
+            .form-group.row
+              = form.label :starring
+              = form.text_field :starring
+            .form-group.row
+              = form.submit

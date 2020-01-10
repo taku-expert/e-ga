@@ -1,0 +1,23 @@
+%body
+  .name
+    = link_to movie_path(movie) do |m|
+      = movie.title
+  .average
+    - if @comments.length == 0
+      %h3 このmovieの評価はまだありません
+    - else
+      %h3 このmovieの平均評価
+      %h4
+        .average-content
+          #star-average
+          | #{@average}点
+        :javascript
+          $('#star-average').raty({
+            size      : 36,
+            starOff   : '#{asset_path('star-off.png')}',
+            starOn    : '#{asset_path('star-on.png')}',
+            starHalf  : '#{asset_path('star-half.png')}',
+            half      : true,
+            readOnly  : true,
+            score     : #{@average},
+          });
