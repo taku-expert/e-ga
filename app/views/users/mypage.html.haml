@@ -1,2 +1,34 @@
-.gg
-  = link_to "編集", edit_user_path(@user.id)
+-# .gg
+-#   = link_to "編集", edit_user_path(@user.id)
+.page-all
+  .prof
+    = image_tag 'dorres.jpeg', alt: 'プロフィール', height: '250', width: '250',class: "prof__image"
+  .user-box
+    .user-box__han
+      .user-box__han__name
+        = @user.name
+      .user-box__han__icon
+        %i.fas.fa-star
+      .user-box__han__admin-new
+        %h1 映画投稿
+  .status
+    .status__box
+      .status__box__email
+        .status__box__email__icon
+          %i.fas.fa-lock
+        .status__box__email__mail
+          %p メールアドレス
+          = @user.email
+      .status__box__gendder
+        .status__box__gendder__icon
+          %i.fas.fa-heart
+        .status__box__gendder__gen
+          %p 性別
+          = @user.gendder
+      .status__box__age
+        .status__box__age__icon
+          %i.fas.fa-hourglass-start
+        .status__box__age__post
+          %p 年齢
+          = @user.age
+          才
