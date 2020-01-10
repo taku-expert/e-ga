@@ -1,0 +1,61 @@
+.contents {
+  padding: 15px;
+  border-top: 3px solid $ega-skyblue;
+  background-color: $ega-blue;
+  .content__first {
+    height: 300px;
+    &__title {
+      margin-left: 40px;
+      height: 50px;
+      font-size: 25px;
+      line-height: 50px;
+      color: white;
+    }
+    &__body {
+      height: 250px;
+      background-color: $ega-rightblue;
+    }
+  }
+  .content__second {
+    height: 300px;
+    &__title {
+      margin-left: 40px;
+      height: 50px;
+      font-size: 25px;
+      line-height: 50px;
+      color: white;
+    }
+    &__body {
+      height: 250px;
+      background-color: $ega-rightblue;
+    }
+  }
+  .content__third {
+    height: 300px;
+    &__title {
+      margin-left: 40px;
+      height: 50px;
+      font-size: 25px;
+      line-height: 50px;
+      color: white;
+    }
+    &__body {
+      height: 250px;
+      background-color: $ega-rightblue;
+    }
+  }
+  .content__fourth {
+    height: 300px;
+    &__title {
+      margin-left: 40px;
+      height: 50px;
+      font-size: 25px;
+      line-height: 50px;
+      color: white;
+    }
+    &__body {
+      height: 250px;
+      background-color: $ega-rightblue;
+    }
+  }
+}
