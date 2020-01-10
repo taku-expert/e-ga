@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   root to: 'homes#index'
   resources :homes, only: [:index]
+  resources :movies, only: [:new, :create]
 
 end
