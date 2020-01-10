@@ -73,7 +73,7 @@
 
       &__gendder {
         display: flex;
-        padding: 0.2em 0.5em;
+        padding: 0.2em 190px 0.5em 0;
         margin: 2em 0;
         background-color: #ffeaea;
         box-shadow: 0px 0px 0px 10px #ffeaea;
@@ -97,7 +97,7 @@
 
       &__age {
         display: flex;
-        padding: 0.2em 0.5em;
+        padding: 0.2em 170px 0.5em 0;
         margin: 2em 0;
         background-color: #ffeaea;
         box-shadow: 0px 0px 0px 10px #ffeaea;
@@ -117,6 +117,67 @@
             margin-right: 20px;
           }
         }
+      }
+
+      &__list {
+        background-color: royalblue;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        &__left {
+          background-color: seagreen;
+          padding: 30px 40px;
+          width: 300px;
+          background-color: #ffeaea;
+          box-shadow: 0px 0px 0px 10px #ffeaea;
+          border: dashed 2px #ffc3c3;
+          border-radius: 8px;
+          &__good {
+            background-color: rgb(160, 52, 182);
+            display: flex;
+            padding: 10px 20px;
+            &__icon {
+              color: yellow;
+              
+            }
+            &__set {
+              margin-left: 30px;
+              
+              &__text {
+                font-size: 20px;
+              }
+              &__number {
+                margin-top: 10px;
+                font-size: 15px;
+              }
+            }
+          }
+        }
+        &__right {
+          background-color: rgb(207, 44, 107);
+          background-color: #ffeaea;
+          box-shadow: 0px 0px 0px 10px #ffeaea;
+          border: dashed 2px #ffc3c3;
+          border-radius: 8px;
+          margin-left: 30px;
+          &__text {
+            background-color: rgb(81, 138, 202);
+            font-size: 30px;
+          }
+          &__comment {
+            background-color: rgb(182, 218, 23);
+            display: flex;
+            &__title {
+              font-size: 20px;
+            }
+            &__main {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+      &__link {
+        
       }
     }
   }
