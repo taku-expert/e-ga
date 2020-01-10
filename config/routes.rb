@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
    
   resources :homes, only: [:index]
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:new, :create, :edit, :update]
   get '/mypage', to: "users#mypage"
 
   root to: 'homes#index'

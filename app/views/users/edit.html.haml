@@ -8,7 +8,7 @@
       .single__contents__middle__header
         %h2 会員情報編集
       .single__contents__middle__form
-        = form_with model: @user, url: user_registration_path, local: true do |f|
+        = form_with model: @user, url: user_path, local: true do |f|
           .single__contents__middle__form__block
             %p ユーザーネーム
             %p.box 必須
