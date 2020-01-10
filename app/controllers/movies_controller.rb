@@ -1,15 +1,16 @@
 class MoviesController < ApplicationController
 
   def new
-    @movies = Movie.new
+    @movie = Movie.new
   end
 
   def create
-    @movies = Movie.new
+    @movie = Movie.new(movie_post)
     if @movie.save
       redirect_to (new_movie_path)
     else
       render action: "new"
+    end
   end
 
   private
@@ -21,7 +22,10 @@ class MoviesController < ApplicationController
       :detail,
       :director,
       :starring,
-      :year
+      :year,
+      :image,
+      :genre_id,
+      :rating_status
     )
   end
 end

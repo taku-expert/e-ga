@@ -30,6 +30,7 @@
 |director|string|null: false|
 |starring|string|null: false|
 |year|integer|null: false|
+|image|string|null: false|
 |genre_id|integer|null: false|
 
 ### Association
