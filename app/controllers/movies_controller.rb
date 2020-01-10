@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
 before_action :set_comments
-before_action :max_progress, :progress_5, :progress_4, :progress_3, :progress_2, :progress_1, only: :show
+before_action :max_progress, :rate, :progress_5, :progress_4, :progress_3, :progress_2, :progress_1, only: :show
 
   def index
     @movies = Movie.all
@@ -36,13 +36,11 @@ before_action :max_progress, :progress_5, :progress_4, :progress_3, :progress_2,
 
   def max_progress
     @movie = Movie.find(params[:id])
-    @comments = Comment.all
-    @progress = []
-    @movie.comments.each do |comment|
-      @progress << comment.rate
-    end
-    # @max_progress = @progress.max_by{|v| @progress.count(v)}
-    # group_by{ |e| e }.sort_by{ |e,v| -v.size}.map(&:first).first
+    @progress = Comment.joins(:movie).group("comments.rate").order('count_all DESC').count
+  end
+
+  def rate
+    @rate = [5,4,3,2,1]
   end
 
   def progress_5
