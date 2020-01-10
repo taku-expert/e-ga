@@ -12,6 +12,8 @@
 |age|integer|null: false|
 |gendder|string|null: false|
 |favoritegenre_id|integer|null: false|
+|rating_status|string|
+
 
 
 ### Association
@@ -29,7 +31,6 @@
 |starring|string|null: false|
 |year|integer|null: false|
 |genre_id|integer|null: false|
-|rating_status|string|
 
 ### Association
 - has_many :comments

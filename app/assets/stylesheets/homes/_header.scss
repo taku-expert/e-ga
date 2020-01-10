@@ -1,8 +1,6 @@
 .header {
-  height: 130px;
   background-color: $ega-rightblue;
   border-bottom: 3px solid $ega-skyblue;
-
   // headerの上側部分 //
   &__top {
     display: flex;
@@ -15,7 +13,9 @@
       .pulldown-btn {
         width: 50px;
         height: 50px;
-        background-color: $ega-skyblue;
+        font-size: 50px;
+        cursor: pointer;
+        color: white;
       }
       .logo {
         margin-left: 15px;
@@ -29,47 +29,62 @@
       height: 50px;
       background-color: $ega-skyblue;
     }
+    &__search-btn {
+      height: 50px;
+      width: 50px;
+      background-color: $ega-rightbrown;
+      float: right;
+      .fa-search {
+        margin-left: 10px;
+        font-size: 35px;
+        line-height: 50px;
+        cursor: pointer;
+        color: white;
+      }
+    }
     &__right-box {
       display: flex;
       width: 150px;
       height: 50px;
       background-color: $ega-skyblue;
       .user-image {
-
       }
       .user-nickname {
-
       }
     }
   }
-
+}
   // headerの下側部分 //
-  &__bottom {
-    display: flex;
-    justify-content: space-between;
-    &__left-box {
-      ul {
-        display: flex;
-        li {
-          margin-left: 40px;
-          line-height: 50px;
-          a {
-            text-decoration: none;
-            color: white;
-          }
+.header__bottom {
+  height: 50px;
+  background-color: $ega-rightblue;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  border-bottom: 3px solid $ega-skyblue;
+  &__left-box {
+    ul {
+      display: flex;
+      li {
+        margin-left: 40px;
+        line-height: 50px;
+        a {
+          text-decoration: none;
+          color: white;
         }
       }
     }
-    &__right-box {
-      ul {
-        display: flex;
-        li {
-          margin-right: 40px;
-          line-height: 50px;
-          a {
-            text-decoration: none;
-            color: white;
-          }
+  }
+  &__right-box {
+    ul {
+      display: flex;
+      li {
+        margin-right: 40px;
+        line-height: 50px;
+        a {
+          text-decoration: none;
+          color: white;
         }
       }
     }
