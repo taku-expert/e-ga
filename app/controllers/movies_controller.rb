@@ -6,8 +6,9 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_post)
+    # binding.pry
     if @movie.save
-      redirect_to (new_movie_path)
+      redirect_to (root_path)
     else
       render action: "new"
     end
@@ -23,9 +24,9 @@ class MoviesController < ApplicationController
       :director,
       :starring,
       :year,
-      :image,
       :genre_id,
-      :rating_status
+      :rating_status,
+      :image
     )
   end
 end

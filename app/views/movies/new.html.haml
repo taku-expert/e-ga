@@ -28,7 +28,7 @@
         = f.text_field :rating_status, autocomplete: "rating_status", class:"form-box"
         .container__box__font-box
           写真
-        = f.file_field  :year, autocomplete: "year", class:"form-box"
+        = f.file_field  :image, type: 'file', autocomplete: "image", class:"form-box"
         = f.submit "投稿する", class: "submit"
         
 
