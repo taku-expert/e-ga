@@ -4,13 +4,13 @@
   .prof
     = image_tag 'dorres.jpeg', alt: 'プロフィール', height: '250', width: '250',class: "prof__image"
   .user-box
-    .user-box__han
-      .user-box__han__name
-        = @user.name
-      .user-box__han__icon
-        %i.fas.fa-star
-      .user-box__han__admin-new
-        %h1 映画投稿
+    .user-box__name
+      = @user.name
+  .admin
+    .admin__icon
+      %i.fas.fa-star
+    .admin__new
+      %h1 映画投稿
   .status
     .status__box
       .status__box__email
@@ -51,4 +51,7 @@
           .status__box__list__right__comment__main
             コメントだよー
     .status__box__link
-      .status__box__link__
+      .status__box__link__withdraw
+        退会
+      .status__box__link__edit
+        Edit

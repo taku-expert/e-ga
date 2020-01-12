@@ -1,50 +1,49 @@
 .page-all {
   width: 100%;
   height: 100%;
-  background-color: green($color: #2fcaa3);
+  background-color: $ega-blue;
 
   .prof {
-    background-color: yellow;
+    
     text-align: center;
-    padding: 50px 30px;
+    padding: 50px 30px 10px 30px;
     &__image {
       border-radius: 50%;
     }
   }
 
   .user-box {
-    background-color: red;
     text-align: center;
-
-    &__han {
-      display: flex;
-
+    padding: 30px 380px;
+    background-color: $ega-skyblue;
       &__name {
-        background-color: rgb(12, 33, 99);
-        padding: 20px 0;
+        background-color: $ega-rightbrown;
+        
         color: white;
         font-size: 40px;
-        width: 400px;
-        margin-left: 300px;
         
+        border: solid 1px #FF543A;
       }
-
+    
+  }
+  .admin{
+    display: flex;
+    background-color: rgb(43, 146, 120);
       &__icon {
         color: yellow;
       }
 
-      &__admin-new {
+      &__new {
         font-size: 20px;
       }
     }
-  }
 
   .status {
-    background-color: rgb(172, 61, 103);
+    background-color: $ega-skyblue;
 
     &__box {
-      background-color: rgb(192, 110, 33);
       padding: 20px 170px;
+      text-align: -webkit-center;
       &__email {
         display: flex;
         padding: 0.2em 0.5em;
@@ -54,6 +53,7 @@
         border: dashed 2px #ffc3c3;
         border-radius: 8px;
         justify-content: center;
+        width: 510px;
 
         &__icon {
           color: pink;
@@ -65,6 +65,7 @@
           display: flex;
           margin-left: 30px;
           line-height: 40px;
+          
           p {
             margin-right: 20px;
           }
@@ -80,6 +81,7 @@
         border: dashed 2px #ffc3c3;
         border-radius: 8px;
         justify-content: center;
+        width: 510px;
         &__icon {
           color: pink;
           font-size: 30px;
@@ -104,6 +106,7 @@
         border: dashed 2px #ffc3c3;
         border-radius: 8px;
         justify-content: center;
+        width: 510px;
         &__icon {
           color: pink;
           font-size: 30px;
@@ -120,7 +123,7 @@
       }
 
       &__list {
-        background-color: royalblue;
+        background-color: $ega-skyblue;
         display: flex;
         justify-content: center;
         margin-top: 20px;
@@ -177,7 +180,31 @@
         }
       }
       &__link {
+        background-color: #2057B3;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
         
+        &__withdraw {
+          background-color: #ffc3c3;
+          font-size: 16px;
+          color: white;
+          font-weight: bold;
+          padding: 8px 16px;
+          border: 1px dashed white;
+          box-shadow: 0px 0px 0px 5px #ffc3c3;
+          margin-left: 50px;
+        }
+        &__edit {
+          background-color: #ffc3c3;
+          font-size: 16px;
+          color: white;
+          font-weight: bold;
+          padding: 8px 16px;
+          border: 1px dashed white;
+          box-shadow: 0px 0px 0px 5px #ffc3c3;
+          margin-right: 50px;
+        }
       }
     }
   }
