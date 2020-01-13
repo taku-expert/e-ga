@@ -1,0 +1,59 @@
+.page-all
+  .prof
+    = image_tag 'dorres.jpeg', alt: 'プロフィール', height: '250', width: '250',class: "prof__image"
+  .user-box
+    .user-box__name
+      = @user.name
+  .admin
+  - if current_user.id == @admin
+    .admin__icon
+      %i.fas.fa-star
+    .admin__new
+      %h1 映画投稿
+  .status
+    .status__box
+      .status__box__email
+        .status__box__email__icon
+          %i.fas.fa-lock
+        .status__box__email__mail
+          %p メールアドレス
+          = @user.email
+      .status__box__gendder
+        .status__box__gendder__icon
+          %i.fas.fa-heart
+        .status__box__gendder__gen
+          %p 性別
+          = @user.gendder
+      .status__box__age
+        .status__box__age__icon
+          %i.fas.fa-hourglass-start
+        .status__box__age__post
+          %p 年齢
+          = @user.age
+          才
+    .status__box__list
+      .status__box__list__left
+        .status__box__list__left__box
+          .status__box__list__left__box__up
+            .status__box__list__left__box__up__favorite
+              %h2  お気に入り一覧
+            .status__box__list__left__box__up__icon
+              %i.fas.fa-star
+          .status__box__list__left__box__down
+            .status__box__list__left__box__down__title
+              映画のタイトル
+            .status__box__list__left__box__down__number
+              2
+      .status__box__list__right
+        .status__box__list__right__text
+          %h3 過去のレビュー一覧
+        .status__box__list__right__comment
+          .status__box__list__right__comment__title
+            タイトルだよー
+          .status__box__list__right__comment__main
+            コメントだよー
+    .status__box__link
+      .status__box__link__withdraw
+        退会
+      .status__box__link__edit
+        = link_to "編集", edit_user_path(@user.id)

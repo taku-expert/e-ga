@@ -82,4 +82,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'kaminari'
-gem 'active_hash'
+gem 'erb2haml'
+gem 'pry_rails'
+
