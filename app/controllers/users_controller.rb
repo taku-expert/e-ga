@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def mypage
     @user = User.find(current_user.id)
+    @admin = User.where(admin: '1')
   end
 
   def new
