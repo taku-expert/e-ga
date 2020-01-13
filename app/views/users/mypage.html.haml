@@ -1,5 +1,3 @@
--# .gg
--#   = link_to "編集", edit_user_path(@user.id)
 .page-all
   .prof
     = image_tag 'dorres.jpeg', alt: 'プロフィール', height: '250', width: '250',class: "prof__image"
@@ -54,4 +52,4 @@
       .status__box__link__withdraw
         退会
       .status__box__link__edit
-        Edit
+        = link_to "編集", edit_user_path(@user.id)
