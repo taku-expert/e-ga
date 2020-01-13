@@ -9,5 +9,11 @@ Rails.application.routes.draw do
   resources :movies, only: [:new, :create]
   
   get 'getstarted', to: 'homes#getstarted'
+
+  resources :movies do
+    resources :comments
+  end
+
   root to: 'homes#index'
+
 end
