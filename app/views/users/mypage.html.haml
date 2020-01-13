@@ -5,11 +5,11 @@
     .user-box__name
       = @user.name
   .admin
-  - if current_user.id == @admin
+  - if current_user == @admin
     .admin__icon
       %i.fas.fa-star
     .admin__new
-      %h1 映画投稿
+      = link_to '映画投稿', new_movie_path
   .status
     .status__box
       .status__box__email
