@@ -1,0 +1,50 @@
+.single
+  .single__header
+    .single__header-logo
+      = link_to root_path 
+  .single__contents
+    .single__contents__middle
+      .single__contents__middle__header
+        %h2 会員情報入力
+      .single__contents__middle__form
+        = form_with model: @user, url: user_registration_path, local: true do |f|
+          .single__contents__middle__form__block
+            %p ユーザーネーム
+            %p.box 必須
+            = f.text_field :name, autocomplete: "name",placeholder: "例）バナナ星人"
+
+          .single__contents__middle__form__block
+            %p メールアドレス
+            %p.box 必須
+            = f.email_field :email, autocomplete: "email",placeholder: "PC・携帯どちらでも可"
+
+          .single__contents__middle__form__block
+            %p パスワード
+            %p.box 必須
+            = f.password_field :password, autocomplete: "password",placeholder: "７文字以上の半角英数字"
+
+          .single__contents__middle__form__block
+            %p パスワード再確認
+            %p.box 必須
+            = f.password_field :encrypted_password, autocomplete: "encrypted_password",placeholder: "再度パスワード入力"
+
+          .single__contents__middle__form__block
+            .single__contents__middle__form__block__input-box
+              %p 年齢
+              %p.box 必須
+              = f.select :age, [["10代","10"],["20代","20"],["30代","30"],["40代","40"],["50代","50"],["60代","60"],["70代","70"],["80代","80"],]
+
+            .single__contents__middle__form__block__input-box
+              %p 性別
+              %p.box 必須
+              .single__contents__middle__form__block__input-box__age
+                %label.men
+                  = f.radio_button :gendder, "男"
+                  男
+                %label.women
+                  = f.radio_button :gendder, "女"
+                  女
+
+          .single__contents__middle__form__submit
+            = f.submit "登録", class: "submit"
+    .single__contents__footer

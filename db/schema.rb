@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_01_10_083210) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "rate"
   end
 
   create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -29,7 +30,6 @@ ActiveRecord::Schema.define(version: 2020_01_10_083210) do
     t.integer "genre_id", null: false
     t.string "director", null: false
     t.string "starring", null: false
-    t.string "rating_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image", null: false
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_01_10_083210) do
     t.integer "favoritegenre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "rating_status"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

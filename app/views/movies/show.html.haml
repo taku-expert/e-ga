@@ -1,0 +1,68 @@
+%body
+  = link_to new_movie_comment_path(@movie.id), class:"post" do
+    review
+  .search-sort
+    .select-wrap
+      %select.sort_order{:name => "sort_order"}
+        %option{:name => "location.pathname", :value => "location.pathname"}
+          並び替え
+        %option{:value => "rate_asc"}
+          評価の低い順
+        %option{:value => "rate_desc"}
+          評価の高い順
+        %option{:value => "created_at_asc"}
+          投稿の古い順
+        %option{:value => "created_at_desc"}
+          投稿の新しい順
+  .average
+    - if @comments.length == 0
+      まだレビューがありません
+    - else
+      .progress-bar
+        - @max_progress = []
+        - @progress.each do |p|
+          - @max_progress << p.second
+        .progress-bar__star
+          - @rate.each do |r|
+            %div{class: "progress-bar__star__head", id: "rate-#{r}"}
+              :javascript
+                $('#rate-#{r}').raty({
+                  size: 36,
+                  starOff   : '#{asset_path('star-off.png')}',
+                  starOn    : '#{asset_path('star-on.png')}',
+                  readOnly  : true,
+                  score     : #{r},
+                });
+        .progress-bar__rate
+          .progress-bar__5
+            %progress#Progress_5{max: "#{@max_progress.first}", value: "#{@progress_5}"} 0%
+            = @progress_5
+          .progress-bar__4
+            %progress#Progress_4{max: "#{@max_progress.first}", value: "#{@progress_4}"} 0%
+            = @progress_4
+          .progress-bar__3
+            %progress#Progress_3{max: "#{@max_progress.first}", value: "#{@progress_3}"} 0%
+            = @progress_3
+          .progress-bar__2
+            %progress#Progress_2{max: "#{@max_progress.first}", value: "#{@progress_2}"} 0%
+            = @progress_2
+          .progress-bar__1
+            %progress#Progress_1{max: "#{@max_progress.first}", value: "#{@progress_1}"} 0%
+            = @progress_1
+      %h3 このmovieの平均評価
+      %h4
+        .average-content
+          #star-average
+          | #{average = @comments.average(:rate).floor(1)}点
+        :javascript
+          $('#star-average').raty({
+            size      : 36,
+            starOff   : '#{asset_path('star-off.png')}',
+            starOn    : '#{asset_path('star-on.png')}',
+            starHalf  : '#{asset_path('star-half.png')}',
+            half      : true,
+            readOnly  : true,
+            score     : #{average},
+          });
+        #average.reviews
+          = render @comments
