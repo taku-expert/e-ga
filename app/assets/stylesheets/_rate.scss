@@ -1,0 +1,12 @@
+.progress-bar{
+  margin-top: 20px;
+  display: flex;
+  &__star{
+    height: 150px;
+    margin-right: 10px;
+  }
+  &__rate{
+    height: 150px;
+
+  }
+}
