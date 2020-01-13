@@ -5,6 +5,11 @@
       .logo
     .header__top__search-box
     .header__top__right-box
+      - if user_signed_in?
+        = current_user.name
+      - else
+        = link_to new_user_registration_path do
+          新規登録
       .user-image
       .user-nickname
   .header__bottom
@@ -17,8 +22,19 @@
         %li
           = link_to 'お気に入り', '/'
     .header__bottom__right-box
-      %ul
-        %li
-          = link_to '設定', '/'
-        %li
-          = link_to 'ヘルプ', '/'
+      - if user_signed_in?
+        %ul
+          %li
+            = link_to 'ログアウト', destroy_user_session_path ,method: :delete
+          %li
+            = link_to '設定', '/'
+          %li
+            = link_to 'ヘルプ', '/'
+      - else
+        %ul
+          %li
+            = link_to 'ログイン', new_user_session_path
+          %li
+            = link_to '設定', '/'
+          %li
+            = link_to 'ヘルプ', '/'
