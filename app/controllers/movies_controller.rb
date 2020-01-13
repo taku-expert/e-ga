@@ -13,6 +13,10 @@ class MoviesController < ApplicationController
     end
   end
 
+  def show
+    @movie = Movie.find_by(params[:id])
+  end
+
   private
 
   def movie_post

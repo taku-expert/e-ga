@@ -4,16 +4,18 @@
     .movie-contents
       .contents-text
         .contents-text__title
-          賭ケグルイ
+          = @movie.title
         .contents-text__info
           .contents-text__info__name
             ⭐️⭐️⭐️⭐️⭐️
           .contents-text__info__name
             1時間59分
+            = @movie.screening_time
           .contents-text__info__name
             2019年
+            = @movie.year
       .contents-sentence  
-        創立122年を迎える私立百花王学園。この伝統ある名門校で生徒の階級を決めるのは“ギャンブルの強さ”。勝者には地位と名誉が与えられ、敗者は財産も尊厳も奪われる。この学園に、1人の少女が転校してくる。彼女の名は蛇喰夢子。一見するとお淑やかなこの美少女は、いかなるリスクもいとわない常軌を逸したギャンブル狂だった。学園を支配する生徒会は、夢子を危険な存在と判断し、百戦練磨の刺客を送り込むも次々と撃破。学園は夢子を中心に大きく動き出そうとしていた。生徒会はついに、全校生徒を巻き込んだ百花王学園史上最大のギャンブルバトルの開催を宣言する--。(C)2019 河本ほむら・尚村透/SQUARE ENIX・ 「映画 賭ケグルイ」製作委員会
+        = @movie.detail
       .contents-details
         .contents-detail
           .contents-detail__ibox
@@ -25,14 +27,14 @@
               主演
           .contents-detail__nbox
             .contents-detail__nbox__name
-              ドラマ
+              = @movie.genre_id
             .contents-detail__nbox__name
-              英勉
+              = @movie.director
             .contents-detail__nbox__name
-              浜辺美波  高杉真宙  宮沢氷魚
+              = @movie.starring
             
     .movie-image
-      = image_tag 'kakegurui.webp', size: "200x200", alt: "test"
+      = image_tag @movie.image.url, size: "200x200", alt: "test"
   .movie-sub
     .movie-review
       .review

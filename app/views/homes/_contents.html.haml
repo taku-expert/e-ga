@@ -5,7 +5,8 @@
     .content__first__body
       .content__first__body__content
         - @movies.first(4).each do |movie|
-          = image_tag movie.image.url, width: "300px", hight: "250px", class: "image"
+          = link_to home_path(movie.id) do
+            = image_tag movie.image.url, size: "300x250", class: "image"
   .content__second
     .content__second__title
       %p あなたへのオススメ
