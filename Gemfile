@@ -84,4 +84,5 @@ gem 'fog-aws'
 gem 'kaminari'
 gem 'erb2haml'
 gem 'pry-rails'
+gem 'active_hash'
 
