@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :homes, only: [:index]
   resources :users, only: [:new, :create, :edit, :update]
   get '/mypage', to: "users#mypage"
+  
+  get 'getstarted', to: 'homes#getstarted'
 
   root to: 'homes#index'
 end

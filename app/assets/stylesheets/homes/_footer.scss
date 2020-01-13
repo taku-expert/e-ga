@@ -6,6 +6,15 @@
     height: 50px;
     text-align: center;
     color: white;
+    .scroll-top-btn {
+      color: white;
+      font-size: 15px;
+      line-height: 50px;
+      cursor: pointer;
+      &:hover {
+        font-size: 18px;
+      }
+    }
   }
   &__logo {
     height: 200px;
