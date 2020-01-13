@@ -9,7 +9,7 @@
         %i.fas.fa-search
     .header__top__right-box
       - if user_signed_in?
-        = current_user.name
+        = link_to current_user.name, mypage_path, class: "sign-up-btn"
       - else
         = link_to "新規登録", new_user_registration_path, class: "sign-up-btn"
       .user-image
