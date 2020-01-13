@@ -1,0 +1,20 @@
+%body
+  = link_to "投稿する", new_movie_path, class:"post"
+  .search-sort
+    .select-wrap
+      %select.sort_order{:name => "sort_order"}
+        %option{:name => "location.pathname", :value => "location.pathname"}
+          並び替え
+        %option{:value => "rate_asc"}
+          評価の低い順
+        %option{:value => "rate_desc"}
+          評価の高い順
+        %option{:value => "created_at_asc"}
+          投稿の古い順
+        %option{:value => "created_at_desc"}
+          投稿の新しい順
+  .average
+    %h4
+      #average.contents.row
+        - @movies.each do |movie|
+          = render partial: "movie", locals: { movie: movie }

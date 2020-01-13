@@ -1,0 +1,15 @@
+%h4
+  評価:#{comment.rate}点 | #{comment.title}
+%div{:id => "star-rate-#{comment.id}"}
+:javascript
+  $('#star-rate-#{comment.id}').raty({
+    size: 36,
+    starOff   : '#{asset_path('star-off.png')}',
+    starOn    : '#{asset_path('star-on.png')}',
+    starHalf  : '#{asset_path('star-half.png')}',
+    half      : true,
+    readOnly  : true,
+    score     : #{comment.rate},
+  });
+= simple_format(comment.title)
+= simple_format(comment.text)
