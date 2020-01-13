@@ -14,6 +14,16 @@
     &__body {
       height: 250px;
       background-color: $ega-rightblue;
+      display: flex;
+      padding: 0 100px;
+
+      &__content{
+        display: flex;
+
+        .image{
+          margin-right: 20px;
+        }
+      }
     }
   }
   .content__second {
