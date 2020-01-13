@@ -9,29 +9,34 @@
         %i.fas.fa-search
     .header__top__right-box
       - if user_signed_in?
-        = current_user.name
+        = link_to current_user.name, mypage_path, class: "sign-up-btn"
       - else
         = link_to "新規登録", new_user_registration_path, class: "sign-up-btn"
       .user-image
       .user-nickname
-  .header__bottom
-    .header__bottom__left-box
-      %ul.dropdown
-        %li 
-          = link_to 'ホーム', '/'
-        %li#genre
-          = link_to 'ジャンル', '/'
-          %ul.dropdown_menu
-            %li.dropdown_menu
-              - @genres.each do |genre|
-                = link_to "#{genre.name}", "#"
-        %li
-          = link_to 'お気に入り', '/'
-    .header__bottom__right-box
+.header__bottom
+  .header__bottom__left-box
+    %ul
+      %li 
+        = link_to 'ホーム', new_movie_path
+      %li
+        = link_to 'ジャンル', '/'
+      %li
+        = link_to 'お気に入り', '/'
+  .header__bottom__right-box
+    - if user_signed_in?
       %ul
+        %li
+          = link_to 'ログアウト', destroy_user_session_path, method: :delete, :class => 'navbar-link'
         %li
           = link_to '設定', '/'
         %li
-          = link_to '使い方', getstarted_path
+          = link_to 'ヘルプ', '/'
+    - else
+      %ul
+        %li
+          = link_to 'ログイン', new_user_session_path
+        %li
+          = link_to '設定', '/'
         %li
           = link_to 'ヘルプ', '/'

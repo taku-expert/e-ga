@@ -22,7 +22,7 @@
         = f.text_field :year, autocomplete: "year", class:"form-box"
         .container__box__font-box
           ジャンルid
-        = f.text_field :genre_id, autocomplete: "genre_id", class:"form-box"
+        = f.collection_select :genre_id, Genre.all, :id, :name, prompt: "--", class:"form-box"
         .container__box__font-box
           タイトル
         = f.text_field :rating_status, autocomplete: "rating_status", class:"form-box"
