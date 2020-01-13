@@ -83,3 +83,5 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'kaminari'
 gem 'erb2haml'
+gem 'pry-rails'
+

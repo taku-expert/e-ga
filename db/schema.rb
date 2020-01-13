@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2020_01_09_045711) do
     t.string "rating_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
