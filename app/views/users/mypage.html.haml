@@ -5,7 +5,7 @@
     .user-box__name
       = @user.name
   .admin
-  - if  current_user.id == @admin
+  - if current_user.id == @admin
     .admin__icon
       %i.fas.fa-star
     .admin__new
