@@ -24,10 +24,19 @@
       %li
         = link_to 'お気に入り', '/'
   .header__bottom__right-box
-    %ul
-      %li
-        = link_to 'ログイン', '/'
-      %li
-        = link_to '設定', '/'
-      %li
-        = link_to 'ヘルプ', '/'
+    - if user_signed_in?
+      %ul
+        %li
+          = link_to 'ログアウト', destroy_user_session_path, method: :delete, :class => 'navbar-link'
+        %li
+          = link_to '設定', '/'
+        %li
+          = link_to 'ヘルプ', '/'
+    - else
+      %ul
+        %li
+          = link_to 'ログイン', new_user_session_path
+        %li
+          = link_to '設定', '/'
+        %li
+          = link_to 'ヘルプ', '/'
