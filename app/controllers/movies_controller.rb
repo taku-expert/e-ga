@@ -6,7 +6,6 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_post)
-    # binding.pry
     if @movie.save
       redirect_to (root_path)
     else
