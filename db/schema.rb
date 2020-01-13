@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2020_01_10_061220) do
     t.string "starring", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -44,7 +45,7 @@ ActiveRecord::Schema.define(version: 2020_01_10_061220) do
     t.boolean "admin", default: false
     t.integer "age", null: false
     t.string "gendder", null: false
-    t.integer "favoritegenre_id", null: false
+    t.integer "favoritegenre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "rating_status"

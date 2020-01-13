@@ -1,0 +1,77 @@
+.movie-show{
+  background-color:$ega-blue; color:white;
+  .movie-main{
+    margin:0 auto;
+    max-width: 800px;
+    display: flex;
+    .movie-contents{
+      margin:30px;
+      .contents-text{
+          &__title{
+            margin-left:30px;
+            font-size: 30px;
+          }
+          &__info{
+            display: flex;
+            &__name{
+              margin-left:30px;
+              color:$ega-skyblue;
+            }
+          }
+        }
+      .contents-sentence{
+        margin:30px;
+      }
+      .contents-details{
+        margin:30px;
+        .contents-detail{
+          display:flex;
+          &__ibox{
+            color:$ega-skyblue;
+            margin-right:20px;
+          }
+        }
+      }
+    }
+    .movie-image{
+      margin:auto;
+      width:30%;
+    }
+  }
+  .movie-sub{
+    margin:0 auto;
+    padding-bottom:50px;
+    max-width: 800px;
+    display: flex;
+    .movie-review{
+      width:30%;
+      .review{
+        &__one{
+          margin:10px auto;
+        }
+      }
+    }
+    .movie-comments{
+      width:70%;
+      &__title{
+        font-size: 20px;
+        margin:30px auto;
+      }
+      .comment-item{
+        margin:10px auto;
+        .comment-user{
+          display: flex;
+          &__name{
+            margin-right:30px;
+          }
+        }
+        .comment-time{
+          color:$ega-skyblue;
+        }
+        .comment-main{
+          bottom:50px;
+        }
+      }
+    }
+  }
+}

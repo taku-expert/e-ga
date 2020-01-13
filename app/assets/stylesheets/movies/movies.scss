@@ -1,0 +1,38 @@
+.wrapper{
+  display: block;
+  box-sizing: border-box;
+
+  .container{
+    background-color: #2057B3;
+
+    &__box{
+      width: 600px;
+      margin: 0 auto;
+      background-color: #FFBF3F;
+      padding-top: 50px;
+
+      &__font-box{
+        color: white;
+        font-size: 30px;
+      }
+      .form-box{
+        width: 600px;
+        height: 50px;
+        background-color: #fff;
+        font-size: 30px;
+        margin-top: 20px;
+      }
+
+      .form-area{
+        width: 600px;
+        height: 300px;
+        font-size: 20px;
+      }
+      .submit{
+        border: none;
+        height: 30px;
+        width: 100px;
+      }
+    }
+  }
+}
