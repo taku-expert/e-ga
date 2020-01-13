@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+
 before_action :set_comments
 before_action :max_progress, :rate, :progress_5, :progress_4, :progress_3, :progress_2, :progress_1, only: :show
 
@@ -12,7 +13,12 @@ before_action :max_progress, :rate, :progress_5, :progress_4, :progress_3, :prog
   end
 
   def create
-    Movie.create(movie_params)
+    @movie = Movie.new(movie_post)
+    if @movie.save
+      redirect_to (root_path)
+    else
+      render action: "new"
+    end
   end
 
   def show
@@ -26,7 +32,16 @@ before_action :max_progress, :rate, :progress_5, :progress_4, :progress_3, :prog
   end
 
   def movie_params
-    params.require(:movie).permit(:title, :screening_time, :year, :detail, :genre_id, :director, :starring)
+    params.require(:movie).permit(
+      :title,
+      :screening_time,
+      :year,
+      :detail,
+      :genre_id,
+      :director,
+      :starring,
+      :image
+    )
   end
 
   def average
