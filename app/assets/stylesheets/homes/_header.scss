@@ -79,11 +79,38 @@
     ul {
       display: flex;
       li {
-        margin-left: 40px;
+        width: 150px;
+        text-align: center;
         line-height: 50px;
+        position: relative;
         a {
           text-decoration: none;
           color: white;
+        }
+      }
+      li#genre{
+        margin: 0;
+        width: 200px;
+        text-align: center;
+        height: 53px;
+        ul.dropdown_menu{
+          display: none;
+          width: 100%;
+          position: absolute;
+          margin: 5px 0 0 -5px;
+          li.dropdown_menu{
+            display: block;
+            margin: 0;
+            a{
+              display: inline-block;
+              width: 200px;
+              background-color: $ega-skyblue;
+              border-bottom: 1px solid;
+              &:hover{
+                background-color: $ega-rightblue;
+              }
+            }
+          }
         }
       }
     }
