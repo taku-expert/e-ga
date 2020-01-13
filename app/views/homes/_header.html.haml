@@ -12,11 +12,15 @@
       .user-nickname
   .header__bottom
     .header__bottom__left-box
-      %ul
+      %ul.dropdown
         %li 
           = link_to 'ホーム', '/'
-        %li
+        %li#genre
           = link_to 'ジャンル', '/'
+          %ul.dropdown_menu
+            %li.dropdown_menu
+              - @genres.each do |genre|
+                = link_to "#{genre.name}", "#"
         %li
           = link_to 'お気に入り', '/'
     .header__bottom__right-box
