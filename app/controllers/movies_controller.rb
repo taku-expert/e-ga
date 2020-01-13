@@ -13,7 +13,7 @@ before_action :max_progress, :rate, :progress_5, :progress_4, :progress_3, :prog
   end
 
   def create
-    @movie = Movie.new(movie_post)
+    @movie = Movie.new(movie_params)
     if @movie.save
       redirect_to (root_path)
     else
