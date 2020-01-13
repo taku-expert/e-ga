@@ -8,6 +8,10 @@
       .header__top__search-btn
         %i.fas.fa-search
     .header__top__right-box
+      - if user_signed_in?
+        = current_user.name
+      - else
+        = link_to "新規登録", new_user_registration_path, class: "sign-up-btn"
       .user-image
       .user-nickname
   .header__bottom
