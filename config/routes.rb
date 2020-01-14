@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   resources :movies do
     resources :comments
+    post 'add' => 'favorites#create'
+    delete '/add' => 'favorites#destroy'
   end
 
   root to: 'homes#index'
