@@ -66,6 +66,12 @@
     &__body {
       height: 250px;
       background-color: $ega-rightblue;
+      padding: 0 100px;
+      display: flex;
+
+      .image{
+        margin-right: 20px;
+      }
     }
   }
 }
