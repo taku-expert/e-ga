@@ -31,6 +31,14 @@
           %p 年齢
           = @user.age
           才
+
+      .status__box__genre
+        .status__box__genre__icon
+          %i.fas.fa-atlas
+        .status__box__genre__post
+          %p 好きなジャンル
+          = @user.genre.name
+          
     .status__box__list
       .status__box__list__left
         .status__box__list__left__box
