@@ -171,17 +171,18 @@
           border-radius: 8px;
           margin-left: 30px;
           &__text {
-            background-color: rgb(81, 138, 202);
-            font-size: 30px;
+            font-size: 20px;
+            text-align: center;
           }
           &__comment {
             background-color: rgb(182, 218, 23);
             display: flex;
+            
             &__title {
-              font-size: 20px;
+              font-size: 16px;
             }
             &__main {
-              font-size: 18px;
+              font-size: 16px;
             }
           }
         }
