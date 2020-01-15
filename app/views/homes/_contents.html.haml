@@ -20,4 +20,5 @@
       %p あなたの好きなジャンル : ホラー
     .content__fourth__body
       - @movie_genre_view.first(4).each do |movie_genre|
-        = image_tag movie_genre.image.url, size: "300x250", class: "image"
+        = link_to home_path(movie_genre.id) do
+          = image_tag movie_genre.image.url, size: "300x250", class: "image"
