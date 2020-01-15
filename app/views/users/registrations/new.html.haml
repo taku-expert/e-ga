@@ -47,7 +47,7 @@
 
           .single__contents__middle__form__block__input-box
             %p 好きなジャンル
-            = f.collection_select :favoritegenre_id, Genre.all, :id, :name
+            = f.collection_select :genre_id, Genre.all, :id, :name
 
           .single__contents__middle__form__submit
             = f.submit "登録", class: "submit"
