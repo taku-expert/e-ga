@@ -18,4 +18,6 @@
   .content__fourth
     .content__fourth__title
       %p あなたの好きなジャンル : ホラー
+      - @movie_genre_view.first(4).each do |movie_genre|
+        = image_tag movie_genre.image.url, size: "300x250", class: "image"
     .content__fourth__body
