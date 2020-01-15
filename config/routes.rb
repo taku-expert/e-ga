@@ -17,6 +17,11 @@ Rails.application.routes.draw do
     delete '/add' => 'favorites#destroy'
   end
 
+  resources :comments do
+    post 'add' => 'goods#create'
+    delete '/add' => 'goods#destroy'
+  end
+
   root to: 'homes#index'
 
 end
