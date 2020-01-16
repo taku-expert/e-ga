@@ -1,11 +1,10 @@
 class MoviesController < ApplicationController
 
-before_action :set_comments
-before_action :max_progress, :rate, :progress_5, :progress_4, :progress_3, :progress_2, :progress_1, only: :show
+  before_action :set_comments
+  before_action :max_progress, :rate, :progress_5, :progress_4, :progress_3, :progress_2, :progress_1, only: :show
 
   def index
     @movies = Movie.all
-    @average = @comments.average(:rate).floor(1)
   end
 
   def new
@@ -21,9 +20,14 @@ before_action :max_progress, :rate, :progress_5, :progress_4, :progress_3, :prog
     end
   end
 
+
   def search
     @movies = Movie.search(params[:keyword])
     @genres = Genre.all
+
+  def show
+    # @average = @comments.average(:rate).floor(1)
+
   end
 
   private
