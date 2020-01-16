@@ -7,7 +7,25 @@
           = @movie.title
         .contents-text__info
           .contents-text__info__name
-            ⭐️⭐️⭐️⭐️⭐️
+            ⭐️⭐️
+            - if @comments.length == 0
+              まだレビューがありません
+            - else
+              .progress-bar
+                - @max_progress = []
+                - @progress.each do |p|
+                  - @max_progress << p.second
+                .progress-bar__star
+                  - @rate.each do |r|
+                    %div{class: "progress-bar__star__head", id: "rate-#{r}"}
+                      :javascript
+                        $('#rate-#{r}').raty({
+                          size: 36,
+                          starOff   : '#{asset_path('star-off.png')}',
+                          starOn    : '#{asset_path('star-on.png')}',
+                          readOnly  : true,
+                          score     : #{r},
+                        });
           .contents-text__info__name
             1時間59分
             = @movie.screening_time

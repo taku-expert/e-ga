@@ -1,7 +1,13 @@
 class MoviesController < ApplicationController
 
   before_action :set_comments
-  before_action :max_progress, :rate, :progress_5, :progress_4, :progress_3, :progress_2, :progress_1, only: :show
+  before_action :max_progress, only: :show
+  before_action :rate, only: :show
+  before_action :progress_5, only: :show
+  before_action :progress_4, only: :show
+  before_action :progress_3, only: :show
+  before_action :progress_2, only: :show
+  before_action :progress_1, only: :show
 
   def index
     @movies = Movie.all
