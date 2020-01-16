@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :genre, only: [:show]
+  resources :genres, only: [:show]
 
   root to: 'homes#index'
 

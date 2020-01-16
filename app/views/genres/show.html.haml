@@ -1,0 +1,28 @@
+
+= render 'homes/header'
+= render 'homes/slick'
+
+.contents
+  .content__first
+    .content__first__title
+      %p 
+      = @genre.name
+    .content__first__body
+      .content__first__body__content
+        - @movies.first(4).each do |movie|
+          = link_to home_path(movie.id) do
+            = image_tag movie.image.url, size: "300x250", class: "image"
+  .content__second
+    .content__second__title
+      %p あなたへのオススメ
+    .content__second__body
+  .content__third
+    .content__third__title
+      %p 評価☆5の作品
+    .content__third__body
+  .content__fourth
+    .content__fourth__title
+      %p あなたの好きなジャンル : ホラー
+    .content__fourth__body
+
+= render 'homes/footer'
