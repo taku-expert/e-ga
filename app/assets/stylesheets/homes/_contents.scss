@@ -10,6 +10,9 @@
       font-size: 25px;
       line-height: 50px;
       color: $ega-font;
+      .search{
+        margin-top: 150px;
+      }
     }
     &__body {
       height: 250px;
@@ -19,7 +22,9 @@
 
       &__content{
         display: flex;
-
+        img{
+          object-fit: cover;
+        }
         .image{
           margin-right: 20px;
         }
