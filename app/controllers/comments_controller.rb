@@ -4,6 +4,7 @@ before_action :set_movie
   def index
     @comment = Comment.all
   end
+
   def new
     @comment = Comment.new
   end
@@ -13,8 +14,11 @@ before_action :set_movie
     redirect_to movie_path(@movie.id)
   end
 
+  
+
 
   private
+
   def set_movie
     @movie = Movie.find(params[:movie_id])
   end
@@ -22,4 +26,5 @@ before_action :set_movie
   def comment_params
     params.require(:comment).permit(:title, :text, :rate).merge(user_id: 1, movie_id: params[:movie_id])
   end
+
 end
