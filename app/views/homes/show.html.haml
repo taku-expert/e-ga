@@ -7,11 +7,10 @@
           .contents-text__title__box
             = @movie.title
           .contents-text__title__favorite
-            お気に入り
-            -# - if !Favorite.exists?(user_id:current_user.id,movie_id:movie.id)
-            -#   = link_to "お気に入り",post_add_path(movie),method: :post
-            -# - else
-            -#   = link_to "お気に入り解除",post_add_path(movie),method: :delete
+            - if !Favorite.exists?(user_id: current_user.id, movie_id: params[:id])
+              = link_to "お気に入り", "/movies/#{params[:id]}/add", method: :post
+            - else
+              = link_to "お気に入り解除", "/movies/#{params[:id]}/add", method: :delete
 
         .contents-text__info
           .contents-text__info__name
