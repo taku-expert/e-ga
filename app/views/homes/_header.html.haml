@@ -1,9 +1,8 @@
 .header
   .header__top
     .header__top__left-box
-      .pulldown-btn
-        %i.far.fa-list-alt
       .logo
+        = image_tag 'e-ga_180_50_2.svg', alt: 'プロフィール', height: '50', width: '180', class: "logo_image"
     .header__top__search-box
       .header__top__search-btn
         %i.fas.fa-search
@@ -16,11 +15,15 @@
       .user-nickname
 .header__bottom
   .header__bottom__left-box
-    %ul
+    %ul.dropdown
       %li 
         = link_to 'ホーム', new_movie_path
-      %li
+      %li#genre
         = link_to 'ジャンル', '/'
+        %ul.dropdown_menu
+          %li.dropdown_menu
+            - @genres.each do |genre|
+              = link_to "#{genre.name}", "#"
       %li
         = link_to 'お気に入り', '/'
   .header__bottom__right-box
