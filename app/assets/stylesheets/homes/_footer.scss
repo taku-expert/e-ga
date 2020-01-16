@@ -10,9 +10,9 @@
       color: $ega-font;
       font-size: 15px;
       line-height: 50px;
-      cursor: pointer;
-      &:hover {
-        font-size: 18px;
+      p {
+        display: inline;
+        cursor: pointer;
       }
     }
   }

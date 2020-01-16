@@ -16,7 +16,6 @@
     }
     &__body {
       height: 250px;
-      background-color: $ega-rightblue;
       display: flex;
       padding: 0 100px;
 
@@ -42,24 +41,9 @@
     }
     &__body {
       height: 250px;
-      background-color: $ega-rightblue;
     }
   }
   .content__third {
-    height: 300px;
-    &__title {
-      margin-left: 40px;
-      height: 50px;
-      font-size: 25px;
-      line-height: 50px;
-      color: $ega-font;
-    }
-    &__body {
-      height: 250px;
-      background-color: $ega-rightblue;
-    }
-  }
-  .content__fourth {
     height: 300px;
     &__title {
       margin-left: 40px;
@@ -70,18 +54,15 @@
 
       .choose_genre{
         display: inline-block;
-        float: left;
       }
 
       &__genre{
         display: inline-block;
-        float: left;
       }
       color: $ega-font;
     }
     &__body {
       height: 250px;
-      background-color: $ega-rightblue;
       padding: 0 100px;
       display: flex;
 

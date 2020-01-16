@@ -9,18 +9,14 @@
             = image_tag movie.image.url, size: "300x250", class: "image"
   .content__second
     .content__second__title
-      %p あなたへのオススメ
+      %p 評価☆5の作品
     .content__second__body
   .content__third
     .content__third__title
-      %p 評価☆5の作品
-    .content__third__body
-  .content__fourth
-    .content__fourth__title
       %p.choose_genre あなたの好きなジャンル : 
-      .content__fourth__title__genre
+      .content__third__title__genre
         -# = @user_genre_id.name
-    .content__fourth__body
+    .content__third__body
       - @movie_genre_view.first(4).each do |movie_genre|
         = link_to home_path(movie_genre.id) do
           = image_tag movie_genre.image.url, size: "300x250", class: "image"
