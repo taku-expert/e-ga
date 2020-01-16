@@ -12,8 +12,13 @@ Rails.application.routes.draw do
   get 'getstarted', to: 'homes#getstarted'
 
   resources :movies do
+    collection do
+      get 'search'
+    end
     resources :comments
   end
+
+  resources :genre, only: [:show]
 
   root to: 'homes#index'
 

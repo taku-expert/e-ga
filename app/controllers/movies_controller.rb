@@ -20,8 +20,14 @@ class MoviesController < ApplicationController
     end
   end
 
+
+  def search
+    @movies = Movie.search(params[:keyword])
+    @genres = Genre.all
+
   def show
     # @average = @comments.average(:rate).floor(1)
+
   end
 
   private

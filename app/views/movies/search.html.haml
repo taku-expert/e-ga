@@ -1,0 +1,17 @@
+-# ヘッダー部分
+  -# ほぼ全てのページで実装予定の部分です。
+= render 'homes/header'
+
+.contents
+  .content__first
+    .content__first__title
+      %p 検索結果
+    .content__first__body
+      .content__first__body__content
+        - @movies.each do |movie|
+          = link_to home_path(movie.id) do
+            = image_tag movie.image.url, size: "300x250", class: "image"
+
+-# フッター部分  
+  -# ほぼ全てのページで実装予定の部分です。
+= render 'homes/footer'
