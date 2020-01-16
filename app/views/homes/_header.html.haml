@@ -7,8 +7,6 @@
       = form_with(url: search_movies_path, local: true, method: :get, class: "search-form") do |form|
         = form.text_field :keyword, placeholder: "映画を検索する", class: "search-input"
         = form.submit "検索する", class: "search-btn"
-      .header__top__search-btn
-        %i.fas.fa-search
     .header__top__right-box
       - if user_signed_in?
         = link_to current_user.name, mypage_path, class: "sign-up-btn"

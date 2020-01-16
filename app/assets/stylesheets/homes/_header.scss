@@ -25,24 +25,17 @@
         .search-input{
           width: 85%;
           padding-left: 10px;
+          border: 1px solid $ega-font;
+          border-radius: 5px;
+          border-right: none;
         }
         input.search-btn{
           height: 100%;
           width: 15%;
-          border: none;
+          border: 1px solid $ega-font;
+          border-radius: 5px;
+          cursor: pointer;
         }
-      }
-    }
-    &__search-btn {
-      height: 50px;
-      width: 50px;
-      float: right;
-      .fa-search {
-        margin-left: 10px;
-        font-size: 25px;
-        line-height: 50px;
-        cursor: pointer;
-        color: white;
       }
     }
     &__right-box {
