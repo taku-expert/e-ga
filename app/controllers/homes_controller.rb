@@ -8,5 +8,6 @@ class HomesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    @genres = Genre.all
   end
 end

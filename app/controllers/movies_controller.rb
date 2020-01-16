@@ -21,6 +21,11 @@ before_action :max_progress, :rate, :progress_5, :progress_4, :progress_3, :prog
     end
   end
 
+  def search
+    @movies = Movie.search(params[:keyword])
+    @genres = Genre.all
+  end
+
   private
 
   def set_comments

@@ -4,6 +4,9 @@
       .logo
         = image_tag 'e-ga_180_50_2.svg', alt: 'プロフィール', height: '50', width: '180', class: "logo_image"
     .header__top__search-box
+      = form_with(url: search_movies_path, local: true, method: :get, class: "search-form") do |form|
+        = form.text_field :keyword, placeholder: "映画を検索する", class: "search-input"
+        = form.submit "検索する", class: "search-btn"
       .header__top__search-btn
         %i.fas.fa-search
     .header__top__right-box
@@ -23,7 +26,7 @@
         %ul.dropdown_menu
           %li.dropdown_menu
             - @genres.each do |genre|
-              = link_to "#{genre.name}", "#"
+              = link_to "#{genre.name}", movie_path()
       %li
         = link_to 'お気に入り', '/'
   .header__bottom__right-box
