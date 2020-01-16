@@ -26,7 +26,7 @@
         %ul.dropdown_menu
           %li.dropdown_menu
             - @genres.each do |genre|
-              = link_to "#{genre.name}", "#"
+              = link_to "#{genre.name}", "/genres/#{genre.id}"
       %li
         = link_to 'お気に入り', '/'
   .header__bottom__right-box
