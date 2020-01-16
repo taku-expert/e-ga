@@ -61,11 +61,28 @@
       height: 50px;
       font-size: 25px;
       line-height: 50px;
+      color: white;
+
+      .choose_genre{
+        display: inline-block;
+        float: left;
+      }
+
+      &__genre{
+        display: inline-block;
+        float: left;
+      }
       color: $ega-font;
     }
     &__body {
       height: 250px;
       background-color: $ega-rightblue;
+      padding: 0 100px;
+      display: flex;
+
+      .image{
+        margin-right: 20px;
+      }
     }
   }
 }
