@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_15_064816) do
+ActiveRecord::Schema.define(version: 2020_01_16_072144) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 2020_01_15_064816) do
 
   create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "post_id", null: false
+    t.bigint "movie_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_favorites_on_post_id"
+    t.index ["movie_id"], name: "index_favorites_on_movie_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
