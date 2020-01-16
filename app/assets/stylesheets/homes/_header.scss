@@ -1,6 +1,6 @@
 .header {
   background-color: $ega-rightblue;
-  border-bottom: 3px solid $ega-skyblue;
+  border-bottom: 2px solid $ega-skyblue;
   // headerの上側部分 //
   &__top {
     display: flex;
@@ -10,33 +10,23 @@
     padding: 15px;
     &__left-box {
       display: flex;
-      .pulldown-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 50px;
-        cursor: pointer;
-        color: white;
-      }
       .logo {
         margin-left: 15px;
-        width: 100px;
-        height: 50px;
-        background-color: $ega-skyblue;
+        width: 200px;
       }
     }
     &__search-box {
-      width: 900px;
+      width: calc(100% - 400px);
       height: 50px;
-      background-color: $ega-skyblue;
+      border: solid 2px white;
     }
     &__search-btn {
       height: 50px;
       width: 50px;
-      background-color: $ega-rightbrown;
       float: right;
       .fa-search {
         margin-left: 10px;
-        font-size: 35px;
+        font-size: 25px;
         line-height: 50px;
         cursor: pointer;
         color: white;
@@ -44,24 +34,15 @@
     }
     &__right-box {
       display: flex;
-      width: 150px;
+      width: 120px;
       height: 50px;
-      background-color: $ega-skyblue;
-      font-size: 30px;
-      color: white;
-      text-align: center;
-
-
       .sign-up-btn{
-        color: white;
+        color: $ega-font;
+        font-weight: 100;
+        font-size: 24px;
+        letter-spacing: 2px;
         text-decoration: none;
-        margin-left: 15px;
         line-height: 50px;
-      }
-      
-      .user-image {
-      }
-      .user-nickname {
       }
     }
   }
@@ -85,26 +66,23 @@
         position: relative;
         a {
           text-decoration: none;
-          color: white;
+          color: $ega-font;
         }
       }
-      li#genre{
-        margin: 0;
+      #genre {
         width: 200px;
-        text-align: center;
-        height: 53px;
+        height: 50px;
         ul.dropdown_menu{
           display: none;
           width: 100%;
           position: absolute;
-          margin: 5px 0 0 -5px;
-          li.dropdown_menu{
+          background-color: #fff;
+          .dropdown_menu{
             display: block;
-            margin: 0;
+            text-align: center;
             a{
-              display: inline-block;
+              display: block;
               width: 200px;
-              background-color: $ega-skyblue;
               border-bottom: 1px solid;
               &:hover{
                 background-color: $ega-rightblue;
@@ -123,7 +101,7 @@
         line-height: 50px;
         a {
           text-decoration: none;
-          color: white;
+          color: $ega-font;
         }
       }
     }

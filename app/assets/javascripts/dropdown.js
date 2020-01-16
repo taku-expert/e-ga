@@ -1,7 +1,9 @@
-$(function(){
-  $('.dropdown li').hover(function(){
-    $("ul:not(:animated)", this).slideDown();
-  }, function(){
-    $("ul.dropdown_menu", this).slideUp();
+$(function() {
+
+  $('#genre').hover(function() {
+    $(this).find('ul').stop().slideDown();
+  }, function() {
+    $(this).find('ul').stop().slideUp();
   });
+  
 });
