@@ -2,7 +2,6 @@
   .single__header
     .single__header-logo
       = link_to root_path 
-        //= image_tag src="fmarket_logo_red.svg", alt:"merukari" , height: "50px", width: "185px"
   .single__contents
     .single__contents__middle
       .single__contents__middle__header
@@ -35,6 +34,10 @@
                 %label.women
                   = f.radio_button :gendder, "女"
                   女
+
+          .single__contents__middle__form__block__input-box
+            %p 好きなジャンル
+            = f.collection_select :genre_id, Genre.all, :id, :name
 
           .single__contents__middle__form__submit
             = f.submit "編集", class: "submit"

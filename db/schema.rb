@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2020_01_15_064816) do
     t.boolean "admin", default: false
     t.integer "age", null: false
     t.string "gendder", null: false
-    t.integer "favoritegenre_id"
+    t.integer "genre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "rating_status"
