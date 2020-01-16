@@ -1,0 +1,16 @@
+
+= render 'homes/header'
+= render 'homes/slick'
+
+.contents
+  .content__first
+    .content__first__title
+      %p 
+      = @genre.name
+    .content__first__body
+      .content__first__body__content
+        - @movies.first(4).each do |movie|
+          = link_to home_path(movie.id) do
+            = image_tag movie.image.url, size: "300x250", class: "image"
+
+= render 'homes/footer'
