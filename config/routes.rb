@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :movies do
     resources :comments
   end
-
+  resources :genres, only: :show
   root to: 'homes#index'
 
 end
