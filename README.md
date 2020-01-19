@@ -1,4 +1,25 @@
-# README
+## <h2 align="center">e-ga</h2>
+
+
+
+
+
+## URL
+
+### http~
+
+## 🐱開発環境
+<p>Haml</p>
+<p>Scss</p>
+<p>RubyonRails</p>
+<p>jquery</p>
+
+
+## 🐊 アプリケーション機能
+
+
+## 開発者Github
+
 
 
 ### userテーブル
