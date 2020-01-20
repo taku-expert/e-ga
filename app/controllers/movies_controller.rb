@@ -27,8 +27,10 @@ class MoviesController < ApplicationController
   end
 
   def show
-    # @average = @comments.average(:rate).floor(1)
-
+    @movie = Movie.find(params[:id])
+    @genres = Genre.all
+    @comments = Comment.where(movie_id: [@movie.id]).order("created_at DESC").page(params[:page]).per(5)
+    @comment = Comment.new
   end
 
   private

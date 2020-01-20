@@ -1,68 +1,98 @@
-%body
-  = link_to new_movie_comment_path(@movie.id), class:"post" do
-    review
-  .search-sort
-    .select-wrap
-      %select.sort_order{:name => "sort_order"}
-        %option{:name => "location.pathname", :value => "location.pathname"}
-          並び替え
-        %option{:value => "rate_asc"}
-          評価の低い順
-        %option{:value => "rate_desc"}
-          評価の高い順
-        %option{:value => "created_at_asc"}
-          投稿の古い順
-        %option{:value => "created_at_desc"}
-          投稿の新しい順
-  .average
-    - if @comments.length == 0
-      まだレビューがありません
-    - else
-      .progress-bar
-        - @max_progress = []
-        - @progress.each do |p|
-          - @max_progress << p.second
-        .progress-bar__star
-          - @rate.each do |r|
-            %div{class: "progress-bar__star__head", id: "rate-#{r}"}
-              :javascript
-                $('#rate-#{r}').raty({
-                  size: 36,
-                  starOff   : '#{asset_path('star-off.png')}',
-                  starOn    : '#{asset_path('star-on.png')}',
-                  readOnly  : true,
-                  score     : #{r},
-                });
-        .progress-bar__rate
-          .progress-bar__5
-            %progress#Progress_5{max: "#{@max_progress.first}", value: "#{@progress_5}"} 0%
-            = @progress_5
-          .progress-bar__4
-            %progress#Progress_4{max: "#{@max_progress.first}", value: "#{@progress_4}"} 0%
-            = @progress_4
-          .progress-bar__3
-            %progress#Progress_3{max: "#{@max_progress.first}", value: "#{@progress_3}"} 0%
-            = @progress_3
-          .progress-bar__2
-            %progress#Progress_2{max: "#{@max_progress.first}", value: "#{@progress_2}"} 0%
-            = @progress_2
-          .progress-bar__1
-            %progress#Progress_1{max: "#{@max_progress.first}", value: "#{@progress_1}"} 0%
-            = @progress_1
-      %h3 このmovieの平均評価
-      %h4
-        .average-content
-          #star-average
-          | #{average = @comments.average(:rate).floor(1)}点
-        :javascript
-          $('#star-average').raty({
-            size      : 36,
-            starOff   : '#{asset_path('star-off.png')}',
-            starOn    : '#{asset_path('star-on.png')}',
-            starHalf  : '#{asset_path('star-half.png')}',
-            half      : true,
-            readOnly  : true,
-            score     : #{average},
-          });
-        #average.reviews
-          = render @comments
+= render 'homes/header'
+.movie-show
+  .movie-main
+    .movie-contents
+      .contents-text
+        .contents-text__title
+          = @movie.title
+        .contents-text__info
+          .contents-text__info__name
+          = render "homes/star/movie-star"
+          .contents-text__info__name
+            = @movie.screening_time + "分"
+          .contents-text__info__name
+            = @movie.year.to_s + "年"
+      .contents-sentence  
+        = @movie.detail
+      .contents-details
+        .contents-detail
+          .contents-detail__ibox
+            .contents-detail__ibox__item
+              ジャンル
+            .contents-detail__ibox__item
+              監督
+            .contents-detail__ibox__item
+              主演
+          .contents-detail__nbox
+            .contents-detail__nbox__name
+              = @movie.genre.name
+            .contents-detail__nbox__name
+              = @movie.director
+            .contents-detail__nbox__name
+              = @movie.starring
+            
+    .movie-image
+      = image_tag @movie.image.url, size: "200x200", alt: "test"
+  .movie-sub
+    .movie-review
+      .review
+        レビュー
+        .review__one
+          = render "homes/star/movie-star"
+        .review__one
+          評価の数  #{@movie.comments.length}
+        .review__one
+      .average
+        - if @comments.length == 0
+          まだレビューがありません
+        - else
+          .progress-bar
+            - @max_progress = []
+            - @progress.each do |p|
+              - @max_progress << p.second
+            .progress-bar__rate
+              .progress-bar__5
+                %meter.meter{max: "#{@max_progress.first}", value: "#{@progress_5}"} 0%
+                = @progress_5
+              .progress-bar__4
+                %meter.meter{max: "#{@max_progress.first}", value: "#{@progress_4}"} 0%
+                = @progress_4
+              .progress-bar__3
+                %meter.meter{max: "#{@max_progress.first}", value: "#{@progress_3}"} 0%
+                = @progress_3
+              .progress-bar__2
+                %meter.meter{max: "#{@max_progress.first}", value: "#{@progress_2}"} 0%
+                = @progress_2
+              .progress-bar__1
+                %meter.meter{max: "#{@max_progress.first}", value: "#{@progress_1}"} 0%
+                = @progress_1
+
+    .movie-comments
+      .movie-comments__title
+        コメント
+      .comment
+        - @comments.each do |comment|
+          = render partial: "comments/comment", locals: { comment: comment }
+  .movie-comment
+    = form_for @comment, url: movie_comments_path(@movie) do |f|
+      .movie-comment__box
+        .movie-comment__box__star
+          #star
+            = f.label :rate, "評価", class:"rate"
+            = f.hidden_field :rate, id: :review_star
+          :javascript
+            $('#star').raty({
+              size        : 36,
+              starOff     : '#{asset_path('star-off.png')}',
+              starOn      : '#{asset_path('star-on.png')}',
+              scoreName   : 'comment[rate]',
+            });
+      .movie-comment__box__title
+        = f.label :"タイトル"
+        = f.text_field :title, class: "review-box"
+      .movie-comment__box__text
+        = f.label :"レビュー内容"
+        = f.text_area :text, class: "review-area"
+      .movie-content__box__btn
+        = f.submit "レビューする"
+= render 'homes/footer'

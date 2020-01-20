@@ -7,15 +7,13 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :edit, :update]
   get '/mypage', to: "users#mypage"
 
-  resources :movies, only: [:new, :create,]
-  
   get 'getstarted', to: 'homes#getstarted'
 
   resources :movies do
+    resources :comments
     collection do
       get 'search'
     end
-    resources :comments
   end
 
   resources :genres, only: [:show]

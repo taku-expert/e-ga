@@ -12,7 +12,7 @@ class HomesController < ApplicationController
   def show
     @movie = Movie.find(params[:id])
     @genres = Genre.all
-    @comments = Comment.where(movie_id: [@movie.id])
+    @comments = Comment.where(movie_id: [@movie.id]).order("created_at DESC").page(params[:page]).per(5)
   end
 
   def getstarted
