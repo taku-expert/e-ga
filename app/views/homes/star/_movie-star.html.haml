@@ -1,0 +1,9 @@
+%div{class: "rate-#{@movie.id}"}
+  :javascript
+    $('.rate-#{@movie.id}').raty({
+      size: 36,
+      starOff   : '#{asset_path('star-off.png')}',
+      starOn    : '#{asset_path('star-on.png')}',
+      readOnly  : true,
+      score     : #{@movie.score}/#{@movie.comments.length},
+    });

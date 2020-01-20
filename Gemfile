@@ -85,4 +85,4 @@ gem 'kaminari'
 gem 'erb2haml'
 gem 'pry-rails'
 gem 'active_hash'
-
+gem 'counter_culture'

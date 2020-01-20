@@ -7,13 +7,11 @@
           = @movie.title
         .contents-text__info
           .contents-text__info__name
-            ⭐️⭐️⭐️⭐️⭐️
+          = render "homes/star/movie-star"
           .contents-text__info__name
-            1時間59分
-            = @movie.screening_time
+            = @movie.screening_time + "分"
           .contents-text__info__name
-            2019年
-            = @movie.year
+            = @movie.year.to_s + "年"
       .contents-sentence  
         = @movie.detail
       .contents-details
@@ -40,42 +38,44 @@
       .review
         レビュー
         .review__one
-          ⭐️⭐️⭐️⭐️⭐️
+          = render "homes/star/movie-star"
         .review__one
-          評価の数　50
+          評価の数  #{@movie.comments.length}
         .review__one
 
     .movie-comments
       .movie-comments__title
         コメント
       .comment
-        .comment-item
-          .comment-user
-            .comment-user__name
-              chikuwabu
-            .comment-user__review
-              ⭐️⭐️⭐️⭐️⭐️
-        .comment-item
-          .comment-title 
-            賭ケグルってないじゃない。
-        .comment-item
-          .comment-time
-            2019年12月17日
-        .comment-item
-          .comment-main
-            アニメの1期を観ました。それなりに面白かったので、実写版を視聴。
-            今作は、オリジナルストーリーなのでしょうか。
-            全く面白くありません。
-            ギャンブル自体が、カイジの劣化版のようで、非常に幼稚。
-            心理戦も、裏の駆け引きもすごく浅い。結果がすぐ分かってしまいます。
-            何より、ヴィレッジなるアンチ賭け事の集団が意味不明。
-            ギャンブル至上主義の私立百花王学園にいる意味がありません。
-            アニメでは、蛇喰夢子vs学園を支配する生徒会役員達、生徒会長という構図が良かったのに、
-            映画は、ヴィレッジvs生徒会の戦いに蛇喰夢子が加わるという変な脚本。
-            演出、シナリオ全てがつまらない上に、出演者たちの学芸会風味の演技がどうにもダメな感じがしました。
-            浜辺美波さんは、雰囲気として夢子ぽさもあるのですが、
-            蛇喰夢子というキャラクターの良さは、破滅願望の見えるギャンブル中毒、依存で、もっと妖艶で、妖しいところだと、
-            個人的には思っていたのですが、今作は名推理の可愛いキャラに納まってしまっているのが残念です。
+        - @comments.each do |comment|
+          = render partial: "comments/comment", locals: { comment: comment }
+        -# .comment-item
+        -#   .comment-user
+        -#     .comment-user__name
+        -#       chikuwabu
+        -#     .comment-user__review
+        -#       ⭐️⭐️⭐️⭐️⭐️
+        -# .comment-item
+        -#   .comment-title 
+        -#     賭ケグルってないじゃない。
+        -# .comment-item
+        -#   .comment-time
+        -#     2019年12月17日
+        -# .comment-item
+        -#   .comment-main
+        -#     アニメの1期を観ました。それなりに面白かったので、実写版を視聴。
+        -#     今作は、オリジナルストーリーなのでしょうか。
+        -#     全く面白くありません。
+        -#     ギャンブル自体が、カイジの劣化版のようで、非常に幼稚。
+        -#     心理戦も、裏の駆け引きもすごく浅い。結果がすぐ分かってしまいます。
+        -#     何より、ヴィレッジなるアンチ賭け事の集団が意味不明。
+        -#     ギャンブル至上主義の私立百花王学園にいる意味がありません。
+        -#     アニメでは、蛇喰夢子vs学園を支配する生徒会役員達、生徒会長という構図が良かったのに、
+        -#     映画は、ヴィレッジvs生徒会の戦いに蛇喰夢子が加わるという変な脚本。
+        -#     演出、シナリオ全てがつまらない上に、出演者たちの学芸会風味の演技がどうにもダメな感じがしました。
+        -#     浜辺美波さんは、雰囲気として夢子ぽさもあるのですが、
+        -#     蛇喰夢子というキャラクターの良さは、破滅願望の見えるギャンブル中毒、依存で、もっと妖艶で、妖しいところだと、
+        -#     個人的には思っていたのですが、今作は名推理の可愛いキャラに納まってしまっているのが残念です。
 
 
 
