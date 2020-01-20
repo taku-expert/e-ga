@@ -1,0 +1,13 @@
+<h4>評価:点 | </h4>
+<div id="star-rate"></div>
+  <script>
+  $('#star-rate').raty({
+    size: 36,
+    starOff   : '<%= asset_path('star-off.png') %>',
+    starOn    : '<%= asset_path('star-on.png') %>',
+    starHalf  : '<%= asset_path('star-half.png') %>',
+    half      : true,
+    readOnly  : true,
+    score     : 3,
+  });
+  </script>  
