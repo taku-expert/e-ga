@@ -26,5 +26,3 @@ before_action :set_movie
   end
 
 end
-
-    # @comment = Comment.new(text: comment_params[:text], title: comment_params[:title], rate: comment_params[:rate])
