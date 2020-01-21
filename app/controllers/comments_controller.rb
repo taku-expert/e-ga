@@ -10,12 +10,10 @@ before_action :set_movie
   end
 
   def create
-    Comment.create(comment_params)
+    @comment = @movie.comments.new(comment_params)
+    @comment.save
     redirect_to movie_path(@movie.id)
   end
-
-  
-
 
   private
 
@@ -24,7 +22,7 @@ before_action :set_movie
   end
 
   def comment_params
-    params.require(:comment).permit(:title, :text, :rate).merge(user_id: 1, movie_id: params[:movie_id])
+    params.require(:comment).permit(:title, :text, :rate).merge(user_id: current_user.id, movie_id: params[:movie_id])
   end
 
 end

@@ -3,7 +3,7 @@
     .content-top
       .contents
         .container
-          = form_for @comment, url: {action: "create"} do |form|
+          = form_for @comment, url: movie_comments_path(@movie) do |form|
             #star.form-group.row
               = form.label :rate, "評価", class:"rate"
               = form.hidden_field :rate, id: :review_star
@@ -14,14 +14,11 @@
                 starOn      : '#{asset_path('star-on.png')}',
                 scoreName   : 'comment[rate]',
               });
-            -# JS内に下記記述追加で、".5"評価が可能
-            -# starHalf    : '#{asset_path('star-half.png')}',
-            -# half        : true,
             .form-group.row
-              = form.label :title
+              = form.label :"タイトル"
               = form.text_field :title, id: :comment_title
             .form-group.row
-              = form.label :text
+              = form.label :"レビュー内容"
               = form.text_area :text, id: :comment_text
             .form-group.row
               = form.submit

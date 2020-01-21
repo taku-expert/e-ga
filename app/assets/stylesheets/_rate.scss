@@ -1,12 +1,19 @@
-.progress-bar{
+.progress-bar {
   margin-top: 20px;
   display: flex;
-  &__star{
+  &__star {
     height: 150px;
     margin-right: 10px;
   }
-  &__rate{
+  &__rate {
     height: 150px;
-
   }
+}
+
+.meter::-webkit-meter-optimum-value {
+  background: -webkit-gradient(linear, left top, left bottom, from(yellow), to(yellow), color-stop(0.20, rgb(255, 255, 152)), color-stop(0.45, rgb(220, 220, 0)), color-stop(0.55, rgb(200, 200, 0)));
+  height: 100%;
+}
+.meter{
+  width: 150px;
 }
