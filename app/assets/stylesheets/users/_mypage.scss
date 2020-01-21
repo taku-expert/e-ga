@@ -148,7 +148,6 @@
 
       &__list {
         background-color: $ega-skyblue;
-        // margin-top: 20px;
         padding: 20px 230px;
         &__main {
           background-color: #ffeaea;
@@ -162,42 +161,57 @@
           &__name {
             display: flex;
             font-size: 19px;
+            justify-content: center;
             
             &__title {
-              margin-left: 20px;
+              width: 25%;
+            }
+            &__big {
+              width: 25%;
             }
             &__comment {
-              margin-left: 20px;
+              width: 25%;
             }
             &__rate {
-              margin-left: 20px;
+              width: 25%;
             }
 
           }
           
           &__win {
+            margin-top: 12px;
             &__one{
             display: flex;
             flex-direction: row;
-            justify-content: center;
             font-size: 18px;
+            justify-content: space-around;
+              &__movie {
+                width: 25%;
+              }
+              &__title {
+                width: 25%;
+              }
+              &__text {
+                width: 25%;
+              }
+              &__rate {
+                width: 25%;
+                .fa-star {
+                  color: yellow;
+                  margin-left: 15px;
+                  font-size: 18px;
+                  line-height: 32px;
+                }
+              }
             }
           }
 
-              // &__icon {
-              //   color: yellow;
-              //   margin-left: 15px;
-              //   font-size: 18px;
-              //   line-height: 32px;
-              // }
-            
-            
           }
         }
           
         
       &__link {
-        background-color: #2057B3;
+        background-color: $ega-blue;
         display: flex;
         justify-content: space-between;
         margin-top: 30px;

@@ -45,24 +45,24 @@
         .status__box__list__main__name
           .status__box__list__main__name__title
             %p2 映画のタイトル
+          .status__box__list__main__name__big
+            %p2 レビュー名
           .status__box__list__main__name__comment
-            %p2 映画のコメント
+            %p2 コメント
           .status__box__list__main__name__rate
             %p2 映画の評価
         .status__box__list__main__win
           - @comments.each do |f|
             .status__box__list__main__win__one
-              .status__box__list__main__win__title
+              .status__box__list__main__win__one__movie
                 = f.movie.title 
+              .status__box__list__main__win__one__title
                 = f.title
-              .status__box__list__main__win__text
+              .status__box__list__main__win__one__text
                 = f.text
-              .status__box__list__main__win__rate
+              .status__box__list__main__win__one__rate
                 %i.fas.fa-star
                 = f.rate
-            
-
-
 
     .status__box__link
       .status__box__link__withdraw
