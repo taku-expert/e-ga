@@ -40,26 +40,30 @@
           = @user.genre.name
           
     .status__box__list
-      .status__box__list__left
-        .status__box__list__left__box
-          .status__box__list__left__box__up
-            .status__box__list__left__box__up__favorite
-              %h2  お気に入り一覧
-            .status__box__list__left__box__up__icon
-              %i.fas.fa-star
-          .status__box__list__left__box__down
-            .status__box__list__left__box__down__title
-              映画のタイトル
-            .status__box__list__left__box__down__number
-              2
-      .status__box__list__right
-        .status__box__list__right__text
-          %h3 過去のレビュー一覧
-        .status__box__list__right__comment
-          .status__box__list__right__comment__title
-            タイトルだよー
-          .status__box__list__right__comment__main
-            コメントだよー
+      .status__box__list__main
+        %p 過去のレビュー
+        .status__box__list__main__name
+          .status__box__list__main__name__title
+            %p2 映画のタイトル
+          .status__box__list__main__name__comment
+            %p2 映画のコメント
+          .status__box__list__main__name__rate
+            %p2 映画の評価
+        .status__box__list__main__win
+          - @comments.each do |f|
+            .status__box__list__main__win__one
+              .status__box__list__main__win__title
+                = f.movie.title 
+                = f.title
+              .status__box__list__main__win__text
+                = f.text
+              .status__box__list__main__win__rate
+                %i.fas.fa-star
+                = f.rate
+            
+
+
+
     .status__box__link
       .status__box__link__withdraw
         退会
