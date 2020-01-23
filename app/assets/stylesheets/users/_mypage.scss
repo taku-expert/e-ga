@@ -148,73 +148,70 @@
 
       &__list {
         background-color: $ega-skyblue;
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-        &__left {
-          background-color: seagreen;
-          padding: 10px 20px;
+        padding: 20px 230px;
+        &__main {
           background-color: #ffeaea;
           box-shadow: 0px 0px 0px 10px #ffeaea;
           border: dashed 2px #ffc3c3;
           border-radius: 8px;
-          
-          &__box {
-            padding: 10px 20px;
-
-            &__up {
-              display: flex;
-              &__favorite {
-                font-size: 20px;
-              }
-              &__icon {
-                color: yellow;
-                margin-left: 15px;
-                font-size: 18px;
-                line-height: 32px;
-              }
-            }
-            &__down {
-              display: flex;
-              margin-top: 13px;
-              &__title {
-                font-size: 14px;
-              }
-              &__number {
-                margin-left: 14px;
-                font-size: 14px;
-              }
-            }
+          text-align: center;
+          p {
+            font-size: 24px;
           }
-        }
-          
-        &__right {
-          background-color: rgb(207, 44, 107);
-          background-color: #ffeaea;
-          box-shadow: 0px 0px 0px 10px #ffeaea;
-          border: dashed 2px #ffc3c3;
-          border-radius: 8px;
-          margin-left: 30px;
-          &__text {
-            font-size: 20px;
-            text-align: center;
-          }
-          &__comment {
-            background-color: rgb(182, 218, 23);
+          &__name {
             display: flex;
+            font-size: 19px;
+            justify-content: center;
             
             &__title {
-              font-size: 16px;
+              width: 25%;
             }
-            &__main {
-              font-size: 16px;
+            &__big {
+              width: 25%;
+            }
+            &__comment {
+              width: 25%;
+            }
+            &__rate {
+              width: 25%;
+            }
+
+          }
+          
+          &__win {
+            margin-top: 12px;
+            &__one{
+            display: flex;
+            flex-direction: row;
+            font-size: 18px;
+            justify-content: space-around;
+              &__movie {
+                width: 25%;
+              }
+              &__title {
+                width: 25%;
+              }
+              &__text {
+                width: 25%;
+              }
+              &__rate {
+                width: 25%;
+                .fa-star {
+                  color: yellow;
+                  margin-left: 15px;
+                  font-size: 18px;
+                  line-height: 32px;
+                }
+              }
             }
           }
+
+          }
         }
-      }
+          
         
       &__link {
-        background-color: #2057B3;
+        background-color: $ega-blue;
         display: flex;
         justify-content: space-between;
         margin-top: 30px;

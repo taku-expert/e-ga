@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def mypage
     @user = User.find(current_user.id)
     @admin = User.find_by(admin: '1')
+    @comments = @user.comments
   end
 
   def new
@@ -35,4 +36,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :age, :gendder, :genre_id)
   end
+
+
 end
