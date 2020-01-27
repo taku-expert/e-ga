@@ -8,7 +8,9 @@
         = form.text_field :keyword, placeholder: "映画を検索する", class: "search-input"
         = form.submit "検索する", class: "search-btn"
     .header__top__right-box
-      - if user_signed_in?
+      - if user_signed_in? && current_user.admin?
+        =link_to "映画投稿", new_movie_path
+      - elsif user_signed_in?
         = link_to current_user.name, mypage_path, class: "sign-up-btn"
       - else
         = link_to "新規登録", new_user_registration_path, class: "sign-up-btn"
@@ -18,7 +20,7 @@
   .header__bottom__left-box
     %ul.dropdown
       %li 
-        = link_to 'ホーム', new_movie_path
+        = link_to 'ホーム', root_path
       %li#genre
         = link_to 'ジャンル', '/'
         %ul.dropdown_menu
@@ -33,7 +35,7 @@
         %li
           = link_to 'ログアウト', destroy_user_session_path, method: :delete, :class => 'navbar-link'
         %li
-          = link_to '設定', '/'
+          = link_to '設定', edit_user_path(@user)
         %li
           =link_to '使い方', getstarted_path
     - else
