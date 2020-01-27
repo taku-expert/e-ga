@@ -27,6 +27,7 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @user = current_user
     @movie = Movie.find(params[:id])
     @genres = Genre.all
     @comments = Comment.where(movie_id: [@movie.id]).order("created_at DESC").page(params[:page]).per(5)
