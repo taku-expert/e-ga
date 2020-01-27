@@ -8,7 +8,7 @@
       .single__contents__middle__header
         %h2 ログイン
       .single__contents__middle__form
-        = form_with model: @user, local: true do |f|
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
 
           .single__contents__middle__form__block
             %p メールアドレス
@@ -22,4 +22,8 @@
 
           .single__contents__middle__form__submit
             = f.submit "登録", class: "submit"
+          .signup
+            = link_to "Sign up", new_registration_path(resource_name)
+            %br
+            = link_to "Forgot your password?", new_password_path(resource_name)
     .single__contents__footerlog
